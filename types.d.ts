@@ -1,5 +1,7 @@
-interface Category {
+interface Paciente {
     id: number,
     name: string,
-    icon: string
+    plano: string,
+    telefone: string,
+    email: string
 }
