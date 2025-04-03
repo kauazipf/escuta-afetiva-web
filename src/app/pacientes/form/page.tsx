@@ -27,7 +27,7 @@ export default function PacienteFormPage(){
            <NavBar active="pacientes" />
 
             <main className="flex justify-center">
-                <div className="bg-purple-900 min-w-2/3 m-6 p-6 rounded">
+                <div className="bg-purple-800 min-w-2/3 m-6 p-6 rounded">
                     <h2 className="text-lg font-bold">Cadastrar Paciente</h2>
 
                     <form action={formAction} className="space-y-4 mt-4">
@@ -51,8 +51,8 @@ export default function PacienteFormPage(){
                         </div>
 
                         <div className="flex justify-between">
-                            <Button asChild variant={"outline"}>
-                                <Link href="/categories">
+                            <Button asChild>
+                                <Link href="/pacientes">
                                     <ArrowLeft />
                                     Cancelar
                                 </Link>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavBarProps {
     active: "pacientes" | "planos" | "calendario"
@@ -16,14 +17,14 @@ export default function NavBar(props: NavBarProps) {
 
     return (
         <>
-            <nav className="flex justify-between items-center bg-purple-900 p-6">
+            <nav className="flex justify-between items-center bg-purple-950 p-6">
                 <h2 className="text w-3xl font-bold">Escuto com Afeto</h2>
                 <ul className="flex gap-4">
                     {links.map(link =>
                         <li key={link.text} className={active === link.text ? activeClass : ""} ><Link href={link.href} >{link.text}</Link></li>)
                     }
                 </ul>
-                <img className="size-12 rounded-full" src="logo.png" alt="" />
+                <Image src="/logo.png" alt="background" width={48} height={48} className="rounded-full"/>
             </nav>
         </>
     )
