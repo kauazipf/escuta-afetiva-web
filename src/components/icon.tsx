@@ -6,4 +6,5 @@ export default function Icon({ name }: { name: string }) {
     if (!LucideIcon) return <LucideIcons.Ban color="red" />
 
     return <LucideIcon />
+
 }

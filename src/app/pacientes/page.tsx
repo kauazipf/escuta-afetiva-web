@@ -1,6 +1,6 @@
-import { getPacientes } from "@/actions/pacientes-actions";
-import NavBar from "@/components/nav-bar";
+import { getPacientes } from "@/actions/paciente-actions";
 import PacienteItem from "@/components/paciente-item";
+import NavBar from "@/components/nav-bar";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ export default async function PacientesPage() {
             <NavBar active="pacientes" />
 
             <main className="flex justify-center">
-                <div className="bg-slate-900 min-w-2/3 m-6 p-6 rounded">
+                <div className="bg-purple-900 min-w-2/3 m-6 p-6 rounded">
                     <div className="flex justify-between">
                         <h2 className="text-lg font-bold">Pacientes</h2>
                         <Button asChild>
@@ -22,12 +22,14 @@ export default async function PacientesPage() {
                                 Novo paciente
                             </Link>
                         </Button>
+
                     </div>
 
                     {data.length == 0 ?
                         <p>Nenhum paciente cadastrado</p> :
-                        data.map(paciente => <PacienteItem key={paciente.id} paciente={paciente} />)
+                        data.map(paciente => <PacienteItem key={paciente.id} Paciente={paciente} />)
                     }
+
                 </div>
             </main>
         </>

@@ -2,15 +2,15 @@ import CrudDropdown from "./crud-dropdown";
 import Icon from "./icon";
 
 interface PacienteItemProps {
-    paciente: Paciente
+    Paciente: Paciente
 }
 
-export default function PacienteItem({ paciente }: PacienteItemProps) {
+export default function PacienteItem({ Paciente }: PacienteItemProps) {
     return (
         <div className="flex justify-between mt-2">
             <div className="flex gap-2">
-                <Icon name={paciente.plano} />
-                <span>{paciente.name}</span>
+                <Icon name={Paciente.icon} />
+                <span>{Paciente.name}</span>
             </div>
 
             <div>
