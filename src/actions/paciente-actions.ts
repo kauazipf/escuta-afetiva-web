@@ -17,18 +17,24 @@ export async function getPacientes() {
 
 interface Paciente {
     name: string | null;
-    icon: string | null;
+    email: string | null;
+    telefone: string | null;
+    planos: string | null;
 }
 
 interface FormErrors {
     name?: string;
-    icon?: string;
+    email?: string;
+    telefone?: string;
+    planos?: string;
 }
 
 export async function createPacientes(initialState: any, formData: FormData) {
     const data: Paciente = {
         name: formData.get("name") as string,
-        icon: formData.get("icon") as string
+        email: formData.get("email") as string,
+        telefone: formData.get("telefone") as string,
+        planos: formData.get("planos") as string
     };
 
     const options = {
@@ -46,7 +52,9 @@ export async function createPacientes(initialState: any, formData: FormData) {
             const errorsArray = await response.json();
             const errors: FormErrors = {
                 name: errorsArray.find((error: { field: string }) => error.field === "name")?.message,
-                icon: errorsArray.find((error: { field: string }) => error.field === "icon")?.message
+                email: errorsArray.find((error: { field: string }) => error.field === "email")?.message,
+                telefone: errorsArray.find((error: { field: string }) => error.field === "telefone")?.message,
+                planos: errorsArray.find((error: { field: string }) => error.field === "planos")?.message
             };
             return {
                 values: data,
@@ -61,7 +69,9 @@ export async function createPacientes(initialState: any, formData: FormData) {
             values: data,
             errors: {
                 name: "Erro ao criar paciente",
-                icon: ""
+                email: "",
+                planos: "",
+                telefone: ""
             }
         };
     }
